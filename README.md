@@ -1,6 +1,6 @@
 # Hiroshima Responsibility Functor
 
-![Lean CI](https://github.com/GhostDriftTheory/hiroshima-responsibility-functor/actions/workflows/lean.yml/badge.svg)
+[![Lean CI](https://github.com/GhostDriftTheory/hiroshima-responsibility-functor-test/actions/workflows/lean.yml/badge.svg)](https://github.com/GhostDriftTheory/hiroshima-responsibility-functor-test/actions/workflows/lean.yml)
 
 *All theorems machine-checked. Conclusions are conditional on explicit,
 documented premises. Historical and institutional facts are axioms, not
