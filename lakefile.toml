@@ -1,0 +1,6 @@
+name = "hiroshima_responsibility_functor"
+version = "0.1.0"
+defaultTargets = ["HiroshimaResponsibility"]
+
+[[lean_lib]]
+name = "HiroshimaResponsibility"

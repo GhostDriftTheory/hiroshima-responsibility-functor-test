@@ -1,0 +1,14 @@
+.lake/
+*.olean
+*.ilean
+*.c
+*.bc
+*.o
+*.so
+*.dll
+*.dylib
+*.log
+*.aux
+*.out
+*.toc
+*.pdf
