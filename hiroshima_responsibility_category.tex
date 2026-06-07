@@ -1,0 +1,424 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{tikz-cd}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+
+\title{Hiroshima Responsibility Functor}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Claim}
+
+Hiroshima placement can be modeled as a functor
+\[
+  F_H:\mathcal{C}\to\mathcal{R}
+\]
+from the ordinary corporate decision category to the Hiroshima responsibility
+category.  The functor maps the ordinary composite
+\[
+  D\to P\to O
+\]
+to the responsibility composite
+\[
+  D_H\to P_H\to B\to E\to V\to A\to O',
+\]
+which factors through both Beacon $B$ and Verification $V$.
+
+The theorem-level claim is not that psychological pressure is directly proved.
+The theorem-level claim is that paths bypassing $B$ or $V$ are not admissible
+under the predicate $\mathrm{Adm}_{B,V}$.
+
+\section*{Why the Subscript $H$ Is Hiroshima}
+
+The subscript $H$ is not a decorative symbol.  It is justified by an external
+historical premise: Hiroshima is the place where a nuclear-layer failure of
+admissibility is preserved as institutional world memory and is now connected
+to international AI governance.
+
+In this formalization, ``nuclear-layer'' means the technological layer at which
+humanity can damage the conditions of its own continued existence.  AI is
+placed in the same layer not because it is identical to nuclear technology, but
+because advanced AI governance also concerns decisions whose failure modes can
+scale beyond ordinary local harm.
+
+The Hiroshima-specific premise is the conjunction of three conditions:
+\[
+\begin{array}{ll}
+\text{(i)} & \text{a historical witness of } \neg\mathrm{Adm}_{B,V}
+             \text{ at civilizational scale},\\
+\text{(ii)}& \text{institutional preservation as world memory},\\
+\text{(iii)}& \text{an existing AI governance anchor.}
+\end{array}
+\]
+Condition (i) refers to the atomic bombing of Hiroshima.  Condition (ii) is
+represented by institutions such as the Hiroshima Peace Memorial / Genbaku Dome
+and the Hiroshima National Peace Memorial Hall for the Atomic Bomb
+Victims.\footnote{See UNESCO, ``Hiroshima Peace Memorial (Genbaku Dome)'',
+\url{https://whc.unesco.org/en/list/775/}; Hiroshima National Peace Memorial
+Hall for the Atomic Bomb Victims,
+\url{https://www.hiro-tsuitokinenkan.go.jp/en/about/index.html}.}
+Condition (iii) is represented by the Hiroshima AI Process launched under
+Japan's G7 presidency in 2023.\footnote{See OECD, ``G7 Hiroshima Process on
+Generative Artificial Intelligence (AI)'',
+\url{https://www.oecd.org/en/publications/g7-hiroshima-process-on-generative-artificial-intelligence-ai_bf3c0c60-en.html};
+JapanGov, ``The Hiroshima AI Process'',
+\url{https://www.japan.go.jp/kizuna/2024/02/hiroshima_ai_process.html}.}
+
+This is a conditioned structural uniqueness claim about the conjunction of
+these three conditions under the external premises admitted in the Lean file.
+It is not a moral exclusion of other cities with histories of war or
+technological harm.
+
+\section*{Civilizational Layer and Conditioned Uniqueness}
+
+The Lean file introduces an abstract typeclass
+\texttt{CivilizationalResponsibilityTech}.  A technology belongs to this class
+when it has real witnesses for two constraints: an inadmissible path in the
+responsibility category $R$, and civilizational-scale consequences through such
+a path.  Nuclear weapons satisfy these constraints via
+\texttt{hiroshima\_historical\_witness}.  AI systems satisfy the inadmissible
+path constraint via \texttt{bypassBeaconPath} and the civilizational-scale
+constraint via the explicit axiom
+\texttt{ai\_has\_civilizational\_potential}.  The Lean theorem
+\[
+\texttt{nuclear\_ai\_same\_civilizational\_layer}
+\]
+therefore formalizes "same layer" as shared membership in an abstract class
+with non-trivial witnesses, not as equality of identical Boolean records.
+
+The Lean file also proves \texttt{two\_crts\_share\_R}: any two instances of
+\texttt{CivilizationalResponsibilityTech} provide inadmissible-path witnesses
+in the same responsibility category $R$.  Thus the relevant universality claim
+is not that two separate categories \texttt{R\_nuclear} and \texttt{R\_ai} are
+isomorphic.  The stronger and simpler claim is that $R$ is the fixed
+responsibility target shared by all CRT instances.  This is not a claim of
+moral equivalence and does not claim that AI harm is inevitable.
+
+The Lean file also proves a conditioned uniqueness theorem:
+\[
+\texttt{hiroshima\_conditioned\_unique}.
+\]
+The theorem states that any city satisfying both conditions
+\[
+\text{IntentionalNuclearAttack}(x)
+\quad\text{and}\quad
+\text{AIGovernanceAnchor}(x)
+\]
+is equal to Hiroshima.  This is proved from explicit historical axioms:
+Hiroshima and Nagasaki received intentional nuclear attacks, only those cities
+satisfy that condition, Hiroshima has an AI governance anchor, and Nagasaki
+does not have the corresponding anchor in this model.
+
+The theorem does not prove that AI governance requires Hiroshima, nor that
+Hiroshima is necessary for global adoption.  It proves only the conditioned
+uniqueness claim stated above.
+
+\section*{Four-Stage AI Logistics Chain}
+
+The Lean file proves a four-stage chain for next-generation AI logistics.
+
+First, \texttt{admissible\_autonomous\_logistics\_needs\_assurance} proves that
+any admissible next-generation AI logistics path must pass through
+Verification $V$.  This is the formal role of AI assurance in the model and
+uses no new axiom beyond the already proved
+\texttt{not\_passV\_not\_admissible}.
+
+Second, \texttt{hiroshima\_conditioned\_unique} identifies Hiroshima as the
+city satisfying the model's conditioned uniqueness premise:
+\texttt{IntentionalNuclearAttack} and \texttt{AIGovernanceAnchor}.
+
+Third, \texttt{hiroshima\_unique\_for\_ai\_logistics} extends this uniqueness
+statement with \texttt{WorldLogisticsInfrastructure}.  In the Lean file,
+\texttt{WorldLogisticsInfrastructure} is not a single axiom.  It is a defined
+conjunction of five components: manufacturing hub, port and sea gateway,
+maritime heritage, tourism and human-flow infrastructure, and right-sized
+operational scale.  The theorem \texttt{hiroshima\_world\_logistics} proves the
+conjunction for Hiroshima from the five component premises, including
+\texttt{hiroshima\_right\_sized\_scale}.  The infrastructure condition
+strengthens the premise; uniqueness still follows from the first two
+conditions.
+
+Fourth, \texttt{hiroshima\_poc\_environment} records the external premise that
+Hiroshima has the proof-of-concept environment for implementation.
+
+The combined theorem
+\[
+\texttt{hiroshima\_four\_stage\_ai\_logistics\_chain}
+\]
+states all four components together, including both
+\texttt{WorldLogisticsInfrastructure City.Hiroshima} and
+\texttt{PoCEnvironment City.Hiroshima}.  The theorem does not assert an
+exclusive physical build location for logistics systems.  The conclusion is
+that the
+structural basis, conditional uniqueness, logistics infrastructure, and PoC
+environment converge in Hiroshima under the explicit historical,
+institutional, and logistical premises stated as axioms in the Lean file.  The
+strength of this convergence is conditional on those premises; it is not an
+unconditional assertion.
+
+\section*{Definitions}
+
+\begin{definition}[Ordinary corporate decision category]
+Let $\mathcal{C}$ be the free category generated by
+\[
+  D \xrightarrow{p} P \xrightarrow{q} O.
+\]
+Here $D$ is a corporate decision, $P$ is profit/efficiency evaluation, and $O$
+is ordinary operational outcome.  The ordinary decision composite is
+\[
+  u:=q\circ p:D\to O.
+\]
+\end{definition}
+
+\begin{definition}[Hiroshima responsibility category]
+Let $\mathcal{R}$ be the free category generated by
+\[
+  D_H \xrightarrow{m} P_H \xrightarrow{b} B
+  \xrightarrow{e} E \xrightarrow{v} V \xrightarrow{a} A
+  \xrightarrow{o} O'.
+\]
+Here $D_H$ is a Hiroshima-contextualized corporate decision, $P_H$ is a
+Hiroshima-contextualized profit/efficiency evaluation, $B$ is the Beacon
+admissibility condition, $E$ is evidence, $V$ is verifiable evidence or
+third-party verification, $A$ is accountable decision, and $O'$ is accountable
+operational outcome.
+\end{definition}
+
+\section*{What $D_H$ Does Not Formally Define}
+
+The notation $D_H$ denotes a corporate decision under Hiroshima place-context.
+This formalization does not define ``Hiroshima place-context'' internally as a
+mathematical object.  Instead, it records the following external premise:
+
+\begin{itemize}
+  \item A historical instance structurally interpreted as
+  $\neg\mathrm{Adm}_{B,V}$ at civilizational scale exists and is located in
+  Hiroshima.
+  \item This instance is preserved as institutional world memory.
+  \item Hiroshima has already been used as an international AI governance
+  reference point through the Hiroshima AI Process.
+\end{itemize}
+
+Thus $D_H$ is not arbitrary contextualization.  It is the starting object for
+decisions interpreted under a historically documented responsibility context.
+
+\begin{definition}[Hiroshima responsibility functor]
+Define the Hiroshima Responsibility Functor
+\[
+  F_H:\mathcal{C}\to\mathcal{R}
+\]
+on objects by
+\[
+  F_H(D)=D_H,\qquad F_H(P)=P_H,\qquad F_H(O)=O'.
+\]
+Define it on generating morphisms by
+\[
+  F_H(p)=m:D_H\to P_H,
+\]
+and
+\[
+  F_H(q)=o\circ a\circ v\circ e\circ b:P_H\to O'.
+\]
+Since $\mathcal{C}$ is free on the generators $p,q$, this uniquely extends to
+a functor on all morphisms of $\mathcal{C}$.
+\end{definition}
+
+\begin{definition}[Admissibility through Beacon and Verification]
+For a morphism $f:X\to Y$ in $\mathcal{R}$, define
+\[
+  f\in \mathrm{Adm}_{B,V}(X,Y)
+\]
+if and only if there exist morphisms
+\[
+  x:X\to B,\qquad y:B\to V,\qquad z:V\to Y
+\]
+such that
+\[
+  f=z\circ y\circ x.
+\]
+Equivalently, $f$ factors through both Beacon $B$ and Verification $V$.
+\end{definition}
+
+\begin{remark}
+In the Lean formalization, $\mathrm{Adm}_{B,V}$ is implemented via
+\texttt{pathObjects}, which records the sequence of objects visited by a path.
+The equivalence between this implementation and the factorization definition
+above is proved as \texttt{AdmBV\_iff\_factorizes} in the Lean file.  The key
+auxiliary is a path-splitting lemma: if an object appears in
+\texttt{pathObjects}$\,p$, then $p$ splits at that object.
+\end{remark}
+
+\section*{Propositions}
+
+\begin{proposition}[Functorial image of ordinary decision]
+The Hiroshima responsibility functor sends the ordinary decision composite
+$u=q\circ p$ to the responsibility composite
+\[
+  F_H(u)
+  =
+  o\circ a\circ v\circ e\circ b\circ m
+  :
+  D_H\to O'.
+\]
+\end{proposition}
+
+\begin{proof}
+By functoriality,
+\[
+  F_H(q\circ p)=F_H(q)\circ F_H(p).
+\]
+Substituting the definitions gives
+\[
+  F_H(q)\circ F_H(p)
+  =
+  (o\circ a\circ v\circ e\circ b)\circ m.
+\]
+By associativity of composition, this is
+\[
+  o\circ a\circ v\circ e\circ b\circ m:D_H\to O'.
+\]
+\end{proof}
+
+\begin{proposition}[Responsibility composite is admissible]
+The morphism
+\[
+  o\circ a\circ v\circ e\circ b\circ m:D_H\to O'
+\]
+belongs to $\mathrm{Adm}_{B,V}(D_H,O')$.
+\end{proposition}
+
+\begin{proof}
+Let
+\[
+  x=b\circ m:D_H\to B,\qquad
+  y=v\circ e:B\to V,\qquad
+  z=o\circ a:V\to O'.
+\]
+Then
+\[
+  z\circ y\circ x
+  =
+  (o\circ a)\circ(v\circ e)\circ(b\circ m)
+  =
+  o\circ a\circ v\circ e\circ b\circ m.
+\]
+Hence the responsibility composite factors through both $B$ and $V$.
+\end{proof}
+
+\begin{proposition}[Beacon bypass is inadmissible]
+For any path $f:X\to Y$ in $\mathcal{R}$, if $f$ does not factor through $B$,
+then $f\notin \mathrm{Adm}_{B,V}(X,Y)$.
+\end{proposition}
+
+\begin{proof}
+By definition, $f\in\mathrm{Adm}_{B,V}(X,Y)$ only if there exist
+$x:X\to B$, $y:B\to V$, and $z:V\to Y$ such that
+$f=z\circ y\circ x$.  This is a factorization through $B$.  Therefore, if no
+such factorization through $B$ exists, $f$ is not admissible.
+\end{proof}
+
+\begin{proposition}[Verification bypass is inadmissible]
+For any path $f:X\to Y$ in $\mathcal{R}$, if $f$ does not factor through $V$,
+then $f\notin \mathrm{Adm}_{B,V}(X,Y)$.
+\end{proposition}
+
+\begin{proof}
+By definition, $f\in\mathrm{Adm}_{B,V}(X,Y)$ only if there exist
+$x:X\to B$, $y:B\to V$, and $z:V\to Y$ such that
+$f=z\circ y\circ x$.  This is a factorization through $V$.  Therefore, if no
+such factorization through $V$ exists, $f$ is not admissible.
+\end{proof}
+
+\section*{Diagram}
+
+\[
+\begin{tikzcd}[column sep=large,row sep=large]
+\mathcal{C}:
+  D \arrow[r,"p"] & P \arrow[r,"q"] & O
+\\[1.5em]
+\mathcal{R}:
+  D_H \arrow[r,"m"] &
+  P_H \arrow[r,"b"] &
+  B \arrow[r,"e"] &
+  E \arrow[r,"v\;(\mathrm{ADIC})"] &
+  V \arrow[r,"a"] &
+  A \arrow[r,"o"] &
+  O'
+\end{tikzcd}
+\]
+
+The functor $F_H$ maps $D,P,O$ to $D_H,P_H,O'$ and maps the ordinary evaluation
+process to the responsibility process.
+
+\section*{Compact Interpretation}
+
+Hiroshima placement is a functor from the ordinary corporate decision category
+$\mathcal{C}$ to the Hiroshima responsibility category $\mathcal{R}$:
+\[
+  F_H:\mathcal{C}\to\mathcal{R}.
+\]
+It maps corporate decision $D$, profit/efficiency evaluation $P$, and outcome
+$O$ to Hiroshima-contextualized decision $D_H$, Hiroshima-contextualized
+profit/efficiency evaluation $P_H$, and accountable outcome $O'$.
+
+It sends the ordinary composite
+\[
+  D\to P\to O
+\]
+to the responsibility composite
+\[
+  D_H\to P_H\to B\to E\to V\to A\to O'.
+\]
+Therefore, a path that bypasses Beacon $B$ or Verification $V$ is not an
+admissible responsible morphism under $\mathrm{Adm}_{B,V}$.
+
+\section*{What Is and Is Not Claimed}
+
+\begin{itemize}
+  \item Claimed: $F_H$ is a functor from the ordinary decision category to the
+  Hiroshima responsibility category.
+  \item Claimed: $F_H(q\circ p)=o\circ a\circ v\circ e\circ b\circ m$.
+  \item Claimed: this image factors through both Beacon $B$ and Verification
+  $V$.
+  \item Claimed: paths bypassing $B$ or $V$ are not in
+  $\mathrm{Adm}_{B,V}$.
+  \item Claimed as an external historical premise: under the admitted
+  historical and institutional premises, Hiroshima is the city satisfying the
+  conjunction of (i) nuclear-layer
+  $\neg\mathrm{Adm}_{B,V}$ witness, (ii) institutional preservation as world
+  memory, and (iii) existing AI governance anchor through the Hiroshima AI
+  Process.
+  \item Claimed as a Lean theorem: under the predicates
+  \texttt{IntentionalNuclearAttack} and \texttt{AIGovernanceAnchor},
+  Hiroshima is selected by the conditioned uniqueness result.
+  \item Claimed \emph{conditionally}: under the explicit premises stated as
+  axioms in the Lean file, the responsibility structure for next-generation AI
+  logistics most naturally converges to Hiroshima.  The convergence is as
+  strong as the premises admitted.  It is not an unconditional assertion.
+  \item Not claimed: Hiroshima uniquely guarantees ethical action.
+  \item Not claimed: AI governance requires Hiroshima as an anchor, or that
+  Hiroshima is necessary for global adoption.
+  \item Not claimed: that Hiroshima is unconditionally or uniquely necessary
+  for world AI logistics development.  The uniqueness result
+  (\texttt{hiroshima\_conditioned\_unique}) holds under the stated two
+  conditions; it does not hold independently of those conditions.
+  \item Not claimed: autonomous AI logistics systems cannot be physically built
+  or operated outside Hiroshima.  The claim concerns the structural origin of
+  the responsibility architecture, assurance anchor, logistics infrastructure,
+  and PoC environment.
+  \item Not claimed: other cities with war histories are excluded on moral
+  grounds.  They are excluded from this specific role only if they lack the
+  conjunction required above.
+  \item Not claimed: psychological pressure itself is mathematically proved.
+  \item Not claimed: category theory alone proves institutional compliance.
+\end{itemize}
+
+\end{document}
